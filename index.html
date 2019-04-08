@@ -13,17 +13,20 @@
 				<section><i class="far fa-frown-open"></i> Node.js process acting funny, need to debug it.</section>
 				<section><i class="far fa-laugh-beam"></i> Start the node process with either --inspect or --inspect-brk and then open
 					chrome://inspect in Chrome.</section>
+				<section><img src="gifs/nodeDebugger.gif"/></section>
 				<section><i class="far fa-comment"></i> Why not the debugger in my IDE?</section>
 			</section>
 			<section>Fuzzy find
 				<section><i class="far fa-frown-open"></i> It takes so long to find the specific file I want to fiddle with in the sources tab.
 				</section>
 				<section><i class="far fa-laugh-beam"></i> crtl-p, type the filename (or portion thereof).</section>
+				<section><img src="gifs/fuzzyFind.gif"/></section>
 			</section>
 			<section>DOM breakpoints
 				<section><i class="far fa-frown-open"></i> UI is changing but I have no idea where from.</section>
 				<section><i class="far fa-laugh-beam"></i> Right click the element, or parent of the element that is being modified, in the
 					elements inspect tab of CDT and add dom breakpoints</section>
+				<section><img src="gifs/domBreakpoint.gif"/></section>
 				<section><i class="far fa-comment"></i> Call stack will almost always have jquery at the very top, but further down should be your
 					culprit.</section>
 			</section>
@@ -106,7 +109,7 @@
 	</div>
 	<script src="node_modules/reveal.js/js/reveal.js"></script>
 	<script>
-		Reveal.initialize();
+		Reveal.initialize({height: '100%', width: '100%'});
 	</script>
 </body>
 

@@ -31,34 +31,31 @@
 					culprit.</section>
 			</section>
 			<section>inspect element
-				<section><i class="far fa-frown-open"></i> I have this jQuery thing that points to an element, but I want to see it in the
-					elements tab so I can fiddle with it (set dom breakpoints, inspect parents, etc)</section>
-				<section><i class="far fa-laugh-beam"></i> Unwrap the dom element from jquery with $.get(). This will give you back an
-					HTMLElement (or an array of them), which you can right click in the console and "show in elements",
-					as well as directly set dom breakpoints.</section>
+				<section><i class="far fa-frown-open"></i> Can't set dom breakpoints on jQuery things</section>
+				<section><i class="far fa-laugh-beam"></i> Unwrap the dom element from jquery with $.get()</section>
+				<section><img src="gifs/unwrapJquery.gif"></section>
 			</section>
 			<section>save to global
-				<section><i class="far fa-frown-open"></i> This variable is named something different than what the source maps say and I need to
-					fiddle with it in the console</section>
-				<section><i class="far fa-laugh-beam"></i> Right click the variable as it appears in the source map, click "save to global".
-				</section>
 				<section><i class="far fa-frown-open"></i> I need to fiddle with this value of this large object and I don't want to have to type
 					all the pathing out</section>
 				<section><i class="far fa-laugh-beam"></i> Right click, save to global!</section>
 				<section><i class="far fa-frown-open"></i> I need to compare these two values from different times the same breakpoint has been
 					hit</section>
 				<section><i class="far fa-laugh-beam"></i> Right click, save to global!</section>
+				<section><img src="gifs/storeAsGlobal.gif"></section>
 			</section>
 			<section>conditional breakpoints
 				<section><i class="far fa-frown-open"></i> I need to break at this specific point, but this is a hot path and gets hit a zillion
 				times. I only care about one specific call!</section>
 				<section><i class="far fa-laugh-beam"></i> Right click the breakpoint, click edit, add a condition. When that condition evaluates
 				truthy, the breakpoint will pause the debugger.</section>
+				<section><img src="gifs/conditionalBreakpoint.gif"></section>
 			</section>
 			<section>request breakpoints
 				<section><i class="far fa-frown-open"></i> I need to fiddle with a specific request</section>
 				<section><i class="far fa-laugh-beam"></i> Set an XHR/Fetch breakpoint. In sources, on the right, scroll down to XHR/Request
 				breakpoints.</section>
+				<section><img src="gifs/xhrBreakpoint.gif"></section>
 			</section>
 			<section>block requests
 				<section><i class="far fa-frown-open"></i> I need to see how the application behaves if this specific request fails</section>

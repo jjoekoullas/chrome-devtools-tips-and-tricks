@@ -3,7 +3,8 @@
 <head>
 	<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
 	<link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
@@ -11,23 +12,27 @@
 		<div class="slides">
 			<section>Debugging a Node.js process
 				<section><i class="far fa-frown-open"></i> Node.js process acting funny, need to debug it.</section>
-				<section><i class="far fa-laugh-beam"></i> Start the node process with either --inspect or --inspect-brk and then open
+				<section><i class="far fa-laugh-beam"></i> Start the node process with either --inspect or --inspect-brk
+					and then open
 					chrome://inspect in Chrome.</section>
-				<section><img src="gifs/nodeDebugger.gif"/></section>
+				<section><img src="gifs/nodeDebugger.gif" /></section>
 				<section><i class="far fa-comment"></i> Why not the debugger in my IDE?</section>
 			</section>
 			<section>Fuzzy find
-				<section><i class="far fa-frown-open"></i> It takes so long to find the specific file I want to fiddle with in the sources tab.
+				<section><i class="far fa-frown-open"></i> It takes so long to find the specific file I want to fiddle
+					with in the sources tab.
 				</section>
 				<section><i class="far fa-laugh-beam"></i> crtl-p, type the filename (or portion thereof).</section>
-				<section><img src="gifs/fuzzyFind.gif"/></section>
+				<section><img src="gifs/fuzzyFind.gif" /></section>
 			</section>
 			<section>DOM breakpoints
 				<section><i class="far fa-frown-open"></i> UI is changing but I have no idea where from.</section>
-				<section><i class="far fa-laugh-beam"></i> Right click the element, or parent of the element that is being modified, in the
+				<section><i class="far fa-laugh-beam"></i> Right click the element, or parent of the element that is
+					being modified, in the
 					elements inspect tab of CDT and add dom breakpoints</section>
-				<section><img src="gifs/domBreakpoint.gif"/></section>
-				<section><i class="far fa-comment"></i> Call stack will almost always have jquery at the very top, but further down should be your
+				<section><img src="gifs/domBreakpoint.gif" /></section>
+				<section><i class="far fa-comment"></i> Call stack will almost always have jquery at the very top, but
+					further down should be your
 					culprit.</section>
 			</section>
 			<section>inspect element
@@ -36,78 +41,117 @@
 				<section><img src="gifs/unwrapJquery.gif"></section>
 			</section>
 			<section>save to global
-				<section><i class="far fa-frown-open"></i> I need to fiddle with this value of this large object and I don't want to have to type
+				<section><i class="far fa-frown-open"></i> I need to fiddle with this value of this large object and I
+					don't want to have to type
 					all the pathing out</section>
 				<section><i class="far fa-laugh-beam"></i> Right click, save to global!</section>
-				<section><i class="far fa-frown-open"></i> I need to compare these two values from different times the same breakpoint has been
+				<section><i class="far fa-frown-open"></i> I need to compare these two values from different times the
+					same breakpoint has been
 					hit</section>
 				<section><i class="far fa-laugh-beam"></i> Right click, save to global!</section>
 				<section><img src="gifs/storeAsGlobal.gif"></section>
 			</section>
 			<section>conditional breakpoints
-				<section><i class="far fa-frown-open"></i> I need to break at this specific point, but this is a hot path and gets hit a zillion
-				times. I only care about one specific call!</section>
-				<section><i class="far fa-laugh-beam"></i> Right click the breakpoint, click edit, add a condition. When that condition evaluates
-				truthy, the breakpoint will pause the debugger.</section>
+				<section><i class="far fa-frown-open"></i> I need to break at this specific point, but this is a hot
+					path and gets hit a zillion
+					times. I only care about one specific call!</section>
+				<section><i class="far fa-laugh-beam"></i> Right click the breakpoint, click edit, add a condition. When
+					that condition evaluates
+					truthy, the breakpoint will pause the debugger.</section>
 				<section><img src="gifs/conditionalBreakpoint.gif"></section>
 			</section>
 			<section>request breakpoints
 				<section><i class="far fa-frown-open"></i> I need to fiddle with a specific request</section>
-				<section><i class="far fa-laugh-beam"></i> Set an XHR/Fetch breakpoint. In sources, on the right, scroll down to XHR/Request
-				breakpoints.</section>
+				<section><i class="far fa-laugh-beam"></i> Set an XHR/Fetch breakpoint. In sources, on the right, scroll
+					down to XHR/Request
+					breakpoints.</section>
 				<section><img src="gifs/xhrBreakpoint.gif"></section>
 			</section>
 			<section>block requests
-				<section><i class="far fa-frown-open"></i> I need to see how the application behaves if this specific request fails</section>
-				<section><i class="far fa-laugh-beam"></i> Block the request via the network tab. Find the request, right click, "block request url"</section>
+				<section><i class="far fa-frown-open"></i> I need to see how the application behaves if this specific
+					request fails</section>
+				<section><i class="far fa-laugh-beam"></i> Block the request via the network tab. Find the request,
+					right click, "block request url"</section>
 				<section><img src="gifs/requestBlocking.gif"></section>
-				<section><i class="far fa-comment"></i> This will block the request URL between reloads, so the block must be removed at some point. If a
-				request is blocked, a "request blocking" tab will show up next to the embedded console.</section>
+				<section><i class="far fa-comment"></i> This will block the request URL between reloads, so the block
+					must be removed at some point. If a
+					request is blocked, a "request blocking" tab will show up next to the embedded console.</section>
 			</section>
 			<section>source maps and edit in place
-				<section><i class="far fa-frown-open"></i> Trying small changes requires a long build, reload, and navigate cycle.  I want to check my small changes quickly.</section>
-				<section><i class="far fa-laugh-beam"></i> Turn off source maps by going to settings in CDT, under sources, uncheck "source maps". Now,
-				open the file you want to modify in the sources tab of CDT. Make your changes, and save. The next time
-				Chrome executes that path, it will use your modified code.</section>
-				<section><i class="far fa-comment"></i> Chrome DevTools chokes and dies if you do this with an absurdly large file. Think bundled code (sometimes we
-				incorrectly refer to that as "minified" code).</section>
-				//TODO: Luke skywalker gifs
+				<section><i class="far fa-frown-open"></i> Trying small changes requires a long build, reload, and
+					navigate cycle. I want to check my small changes quickly.</section>
+				<section><i class="far fa-laugh-beam"></i> Turn off source maps by going to settings in CDT, under
+					sources, uncheck "source maps". Now, open the file you want to modify in the sources tab of CDT.
+					Make your changes, and save. The next time Chrmtme executes that path, it will use your modified
+					code.</section>
+				<section>
+					<table>
+						<tr>
+							<td>Source maps on</td>
+							<td><img src="gifs/lukeBefore.gif"></td>
+						</tr>
+						<tr>
+							<td>Source maps off</td>
+							<td><img src="gifs/luckAfter.gif"></td>
+						</tr>
+					</table>
+				</section>
+				<section><i class="far fa-comment"></i> Chrome DevTools chokes and dies if you do this with an absurdly
+					large file. Think bundled code (sometimes refered to as "minified" around here).</section>
 			</section>
 			<section>loading modules in the console
-				<section><i class="far fa-frown-open"></i> I want to kick around this specific module and see how it behaves.</section>
-				<section><i class="far fa-laugh-beam"></i> Load the module in the console with require and attach it to window,
-				`require(['path/to/the/module'], module => window.myModule = module);`</section>
+				<section><i class="far fa-frown-open"></i> I want to kick around this specific module and see how it
+					behaves.</section>
+				<section><i class="far fa-laugh-beam"></i> Load the module in the console with require and use store as
+					global, `require(['path/to/the/module'], console.log);`</section>
+				<section><img src="gifs/requireFromConsole.gif"></section>
 			</section>
 			<section>console.trace and events
-				<section><i class="far fa-frown-open"></i> This event handler (or function, or method) gets invoked but I have no idea where from</section>
-				<section><i class="far fa-laugh-beam"></i> Put a console.trace call at the top of the method. Chrome will spit out a stack trace in the
-				console. Alternatively setting a breakpoint and looking at the call stack will accomplish the same
-				thing, however only one at a time and it can be more difficult to compare differing stack traces.</section>
-				<section><i class="far fa-frown-open"></i> I want to see what events this Backbone/Marionette thing emits when I do stuff with it.</section>
-				<section><i class="far fa-laugh-beam"></i> theThing.on('all', console.trace), will spit out the event name, any values passed along
-				with it, and a stack trace to give an example of what caused that event</section>
+				<section><i class="far fa-frown-open"></i> This event handler (or function, or method) gets invoked but
+					I have no idea where from</section>
+				<section><i class="far fa-laugh-beam"></i> Put a console.trace call at the top of the method. Chrome
+					will spit out a stack trace in the console. Alternatively setting a breakpoint and looking at the
+					call stack will accomplish the same thing, however only one at a time and it can be more difficult
+					to compare differing stack traces.
+				</section>
+				<section><i class="far fa-frown-open"></i> I want to see what events this Backbone/Marionette thing
+					emits when I do stuff with it.</section>
+				<section><i class="far fa-laugh-beam"></i> theThing.on('all', console.trace), will spit out the event
+					name, any values passed along
+					with it, and a stack trace to give an example of what caused that event</section>
 			</section>
 			<section>styling on the fly
-				<section><i class="far fa-frown-open"></i> It takes so long to wait for builds/reload/navigation/etc just to fiddle with styling</section>
-				<section><i class="far fa-laugh-beam"></i> Add rules to styles tab in the elements tab by clicking the little plus icon. Just like
-				writing vanilla CSS, you put in the selector and then the values.</section>
-				<section><i class="far fa-comment"></i> It is possible to style individual elements and therefore you will not have to define a selector. While this is good to nailing down desired values, it hides the complexity involved in ensuring a selector would actually apply to the element. It is worth it, after desired values are identified, to take a second and write a rule that will be applied.</section>
+				<section><i class="far fa-frown-open"></i> It takes so long to wait for builds/reload/navigation/etc
+					just to fiddle with styling</section>
+				<section><i class="far fa-laugh-beam"></i> Add rules to styles tab in the elements tab by clicking the
+					little plus icon. Just like
+					writing vanilla CSS, you put in the selector and then the values.</section>
+				<section><i class="far fa-comment"></i> It is possible to style individual elements and therefore you
+					will not have to define a selector. While this is good to nailing down desired values, it hides the
+					complexity involved in ensuring a selector would actually apply to the element. It is worth it,
+					after desired values are identified, to take a second and write a rule that will be applied.
+				</section>
 			</section>
 			<section>computed styles
-				<section><i class="far fa-frown-open"></i> I have no idea why this element has this specific value for this specific css property</section>
-				<section><i class="far fa-laugh-beam"></i> Hover over the style in the computed style tab on the right of the elements window. It will
-				tell you the specific rule that set the value. You can then move over to the rules tab and disable that given rule and see what it reverts to etc</section>
+				<section><i class="far fa-frown-open"></i> I have no idea why this element has this specific value for
+					this specific css property</section>
+				<section><i class="far fa-laugh-beam"></i> Hover over the style in the computed style tab on the right
+					of the elements window. It will
+					tell you the specific rule that set the value. You can then move over to the rules tab and disable
+					that given rule and see what it reverts to etc</section>
 			</section>
 			<section>identifying memory leaks
-				<section><i class="far fa-frown-open"></i> This application becomes slow over time (or even just dies).</section>
-				<section><i class="far fa-laugh-beam"></i> Use the memory tools to check for memory leaks. Not going to go into detail here, this is a
-				topic unto itself, just want you aware that it exists.</section>
+				<section><i class="far fa-frown-open"></i> This application becomes slow over time (or even just dies).
+				</section>
+				<section><i class="far fa-laugh-beam"></i> Use the memory tools to check for memory leaks. Not going to
+					go into detail here, this is a
+					topic unto itself, just want you aware that it exists.</section>
 			</section>
 		</div>
 	</div>
 	<script src="node_modules/reveal.js/js/reveal.js"></script>
 	<script>
-		Reveal.initialize({height: '100%', width: '100%'});
+		Reveal.initialize({ height: '100%', width: '100%' });
 	</script>
 </body>
 

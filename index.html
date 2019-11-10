@@ -1,11 +1,13 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
+	<style>
+	table tr td { vertical-align: middle !important; }</style>
+	</head>
 
 <body>
 	<div class="reveal">
@@ -120,8 +122,11 @@
 				<section><i class="far fa-frown-open"></i> I want to see what events this Backbone/Marionette thing
 					emits when I do stuff with it.</section>
 				<section><i class="far fa-laugh-beam"></i> theThing.on('all', console.trace), will spit out the event
-					name, any values passed along
-					with it, and a stack trace to give an example of what caused that event</section>
+					name, any values passed along with it, and a stack trace to give an example of what caused that
+					event</section>
+				<section>
+					<img src="gifs/consoleTraceEvents.gif">
+				</section>
 			</section>
 			<section>styling on the fly
 				<section><i class="far fa-frown-open"></i> It takes so long to wait for builds/reload/navigation/etc
@@ -134,6 +139,9 @@
 					complexity involved in ensuring a selector would actually apply to the element. It is worth it,
 					after desired values are identified, to take a second and write a rule that will be applied.
 				</section>
+				<section>
+					<img src="gifs/addRule.gif">
+				</section>
 			</section>
 			<section>computed styles
 				<section><i class="far fa-frown-open"></i> I have no idea why this element has this specific value for
@@ -142,17 +150,17 @@
 					of the elements window. It will
 					tell you the specific rule that set the value. You can then move over to the rules tab and disable
 					that given rule and see what it reverts to etc</section>
+				<section><img src="gifs/computedStyles.gif"></section>
 			</section>
 			<section>identifying memory leaks
 				<section><i class="far fa-frown-open"></i> This application becomes slow over time (or even just dies).
 				</section>
 				<section><i class="far fa-laugh-beam"></i> Use the memory tools to check for memory leaks. Not going to
-					go into detail here, this is a
-					topic unto itself, just want you aware that it exists.</section>
+					go into detail here, this is a topic unto itself, just be aware that it exists.</section>
 			</section>
 		</div>
 	</div>
-	<script src="node_modules/reveal.js/js/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
 	<script>
 		Reveal.initialize({ height: '100%', width: '100%' });
 	</script>
